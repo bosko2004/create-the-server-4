@@ -1,12 +1,4 @@
 /*  adzuki_curry').displayN
-	lightning_lili_mixture'lor(0x3393ff)
-	mooshroom_stew').displa
-	melted_neapolitan_ice_ccream')
-	banana_cream').displayN
-	melted_passionfruit_sorbet')
-	sopa_de_macaco').displa
-	beef_stew').displayName
-	adzuki_curry').displayN
 	squid_ink_risotuo').dis
 	vanilla_pudding').displ
 	ambrosia').displayName(
@@ -18,7 +10,6 @@
 	melted_strawberry_ice_cream
 	fire_lily_mixture
 */
-
 onEvent('recipes', event => {
 
     /* TEAS   */
@@ -54,18 +45,25 @@ onEvent('recipes', event => {
     function addBowlFluid (ingridients, result_fluid,result){
     	event.recipes.create.mixing(Fluid.of('kubejs:'+result_fluid,250),ingridients).heated()
         if(result!='\0'){
-        	event.reciped.create.filling(result,[
+        	event.recipes.create.filling(result,[
         		'minecraft:bowl',
             	Fluid.of('kubejs:'+result_fluid,250,ingridients)
         	])
         }
     }
+
     addBowlFluid('6x minecraft:beetroot', 'beetroot_soup', 'minecraft:beetroot_soup')
-    addBowlFluid(['farmersdelight:pumpkin_slice',Fluid.of('minecraft:milk',225)],'pumpkin_soup', 'minecraft:pumpkin_soup')
-    addBowlFluid(['2x autuminity:foul_berries','minecraft:spider_eye','farmersdlight:onion'],'foul_soup','autuminity:foul_soup')
-    addBowlFluid(['#forge:salad_ingredinets','#forge:vegetables','minecraft:carrot','#forge:raw_chicken'],'chicken_soup'.'farmersdelight:chicken_soup')
+    addBowlFluid(['farmersdelight:pumpkin_slice',Fluid.of('minecraft:milk',225)],'pumpkin_soup', 'farmersdelight:pumpkin_soup')
+    addBowlFluid(['2x autumnity:foul_berries','minecraft:spider_eye','farmersdelight:onion'],'foul_soup','autumnity:foul_soup')
+    addBowlFluid(['#forge:salad_ingredinets','#forge:vegetables','minecraft:carrot','#forge:raw_chicken'],'chicken_soup','farmersdelight:chicken_soup')
     addBowlFluid(['#forge:salad_ingredients','minecraft:carrot','minecraft:potato','minecraft:potato','minecraft:beetroot'], 'vegetable_soup','farmersdelight:vegetable_soup')
     addBowlFluid(['farmersdelight:raw_pasta','#forge:cooked_eggs','minecraft:dried_kelp','#forge:raw_pork'],'noodle_soup','farmersdelight:noodle_soup')
-    
+    addBowlFluid(['neapolitan:adzuki_beans','neapolitan:banana','minecraft:carrot','farmersdelight:pumpkin_slice'],'adzuki_curry','neapolitan:adzuki_curry')
+    addBowlFluid(['minecraft:chorus_fruit','iceandfire:lightning_lily'],'lightning_lili_mixture','iceandfire:lightning_stew')
+    addBowlFluid(['minecraft:brown_mushroom','minecraft:red_mushroom'],'mooshroom_stew','minecraft:mushroom_stew')
+    addBowlFluid([Fluid.of('melted_vanilla_ice_cream',225),Fluid.of('minecraft:chocolate',225)],'melted_neapolitan_ice_cream','neapolitan:neapolitan_ice_cream')
+    addBowlFluid(['atmospheric:passionfruit','minecraft:sugar'],'melted_passionfruit_sorbet_bucket','atmospheric:passionfruit_sorbet')
+    addBowlFluid(['alexsmobs:banana_peel','minecraft:bone','minecraft:brown_mushroom'],'sopa_de_macaco','alexsmobs:sopa_de_macaco')
+    addBowlFluid(['2x minecraft:potato','minecraft:cooked_beef','minecraft:brown_mushroom'],'beef_stew','enhanced_mushrooms:beef_stew')
   
 }) 
